@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haris Mahadawudin — HR Professional & Pendaki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <style>
+    /* ============================================
+       CARA EDIT WEBSITE INI:
+       - Cari teks di antara tanda == untuk menemukan bagian yang ingin diedit
+       - Ganti teks placeholder dengan info kamu sendiri
+       - Untuk foto: ganti src="" di tag <img> dengan path foto kamu
+       - Untuk warna: ubah nilai di :root {} di bawah ini
+    ============================================ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* == WARNA UTAMA - Ubah sesuai selera == */
+      --forest:  #2C4A2E;  /* Hijau tua (warna dominan) */
+      --moss:    #4A6741;  /* Hijau sedang */
+      --sage:    #7A9E6F;  /* Hijau muda */
+      --mist:    #B8C9A0;  /* Hijau pucat */
+      --cream:   #F5F0E8;  /* Latar belakang utama */
+      --stone:   #8B7355;  /* Coklat muted (teks) */
+      --peak:    #D4C5A0;  /* Krem tua */
+      --sky:     #6B8FA8;  /* Biru langit (aksen) */
+      --bark:    #3D2B1F;  /* Coklat gelap (footer) */
+      --fog:     #E8E0D0;  /* Abu krem (section terang) */
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--bark);
+      overflow-x: hidden;
+    }
+
+    /* ===== NAVIGASI ===== */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 4rem;
+      background: rgba(245,240,232,0.93);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--mist);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--forest); letter-spacing: 2px;
+    }
+    .nav-links { display: flex; gap: 2.5rem; }
+    .nav-links a {
+      font-size: 0.75rem; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--moss); text-decoration: none; font-weight: 700;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--forest); }
+
+    /* Hamburger mobile */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+    .nav-toggle span {
+      display: block; width: 24px; height: 2px;
+      background: var(--forest); margin: 5px 0; transition: 0.3s;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 9rem 4rem 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(106,143,168,0.14) 0%, transparent 60%),
+        radial-gradient(ellipse at 10% 80%, rgba(74,103,65,0.11) 0%, transparent 50%);
+    }
+    .mountain-svg {
+      position: absolute; bottom: 0; right: 0;
+      width: 55%; opacity: 0.12; z-index: 0; pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 640px; }
+
+    .hero-eyebrow {
+      font-size: 0.72rem; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--sage); font-weight: 700; margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block; width: 36px; height: 1px; background: var(--sage);
+    }
+
+    /* == NAMA - Ganti "Haris" dan "Mahadawudin" == */
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 900; line-height: 1.0;
+      color: var(--forest); margin-bottom: 0.4rem;
+    }
+    .hero-name em {
+      font-style: italic; color: var(--moss); display: block;
+    }
+
+    /* == TAGLINE HERO - Ubah sesuai keinginan == */
+    .hero-tagline {
+      font-size: 1rem; font-weight: 300; line-height: 1.9;
+      color: var(--stone); margin: 1.8rem 0 2.8rem;
+      max-width: 460px; letter-spacing: 0.3px;
+    }
+    .hero-tags { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .tag {
+      padding: 0.4rem 1.2rem;
+      border: 1px solid var(--mist); border-radius: 100px;
+      font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--moss); font-weight: 700;
+      background: rgba(255,255,255,0.5);
+    }
+    .tag.filled { background: var(--forest); color: var(--cream); border-color: var(--forest); }
+
+    /* ===== MOUNTAIN DIVIDER ===== */
+    .divider-mountain {
+      width: 100%; height: 80px;
+      background: var(--forest);
+      clip-path: polygon(0 100%, 8% 45%, 20% 65%, 33% 18%, 46% 55%, 58% 12%, 70% 48%, 82% 22%, 91% 44%, 100% 28%, 100% 100%);
+      margin-top: -2px;
+    }
+
+    /* ===== SECTIONS UMUM ===== */
+    section { padding: 5.5rem 4rem; }
+    .section-dark { background: var(--forest); color: var(--fog); }
+    .section-stone { background: var(--fog); }
+
+    .section-label {
+      font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase;
+      font-weight: 700; margin-bottom: 3rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .section-dark .section-label { color: var(--mist); }
+    .section-stone .section-label, .section-cream .section-label { color: var(--sage); }
+    .section-label::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: currentColor; }
+
+    /* ===== TENTANG SAYA ===== */
+    .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center; }
+
+    /* == FOTO PROFIL ==
+       Untuk menambah foto asli:
+       1. Hapus div.about-photo-placeholder
+       2. Uncomment tag <img> di bawahnya
+       3. Ganti src dengan path foto kamu
+    */
+    .about-photo-placeholder {
+      width: 100%; aspect-ratio: 3/4;
+      background: linear-gradient(160deg, var(--moss) 0%, var(--forest) 100%);
+      border-radius: 4px 48px 4px 48px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .about-photo-placeholder::after {
+      content: ''; position: absolute;
+      bottom: 0; left: 0; right: 0; height: 40%;
+      background: linear-gradient(transparent, rgba(0,0,0,0.25));
+    }
+    .photo-initials {
+      font-family: 'Playfair Display', serif;
+      font-size: 5.5rem; font-weight: 900;
+      color: rgba(255,255,255,0.2); letter-spacing: -4px;
+      position: relative; z-index: 1;
+    }
+    /* Uncomment ini untuk pakai foto asli:
+    .about-photo img {
+      width: 100%; aspect-ratio: 3/4; object-fit: cover;
+      border-radius: 4px 48px 4px 48px;
+    }
+    */
+
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem; font-weight: 700;
+      color: var(--forest); margin-bottom: 1.5rem; line-height: 1.2;
+    }
+
+    /* == BIO - Ubah teks paragraf di bawah ini == */
+    .about-text p {
+      color: var(--stone); line-height: 1.9; font-size: 0.95rem;
+      margin-bottom: 1rem; font-weight: 300;
+    }
+
+    .stat-row {
+      display: flex; gap: 2.5rem; margin-top: 2.2rem;
+      padding-top: 2rem; border-top: 1px solid var(--mist);
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 700;
+      color: var(--forest); display: block;
+    }
+    .stat-lbl {
+      font-size: 0.67rem; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--sage); font-weight: 700;
+    }
+
+    /* ===== HR PORTFOLIO ===== */
+    /* == PORTFOLIO CARDS - Edit judul, deskripsi, dan ikon tiap kartu == */
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+    .portfolio-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px; padding: 2rem;
+      transition: transform 0.25s, background 0.25s;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.13);
+    }
+    .card-icon { font-size: 1.6rem; margin-bottom: 1.2rem; color: var(--mist); }
+    .card-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--fog); margin-bottom: 0.7rem; }
+    .card-desc { font-size: 0.85rem; color: rgba(232,224,208,0.6); line-height: 1.75; font-weight: 300; }
+    .card-tag {
+      display: inline-block; margin-top: 1.2rem;
+      padding: 0.25rem 0.8rem;
+      border: 1px solid rgba(184,201,160,0.4); border-radius: 100px;
+      font-size: 0.67rem; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--mist); font-weight: 700;
+    }
+
+    /* ===== CATATAN PENDAKIAN ===== */
+    /* == PEAKS - Edit nama gunung, elevasi, lokasi, dan deskripsi == */
+    .peaks-list { list-style: none; max-width: 860px; }
+    .peak-item {
+      display: flex; align-items: flex-start; gap: 2.5rem;
+      padding: 2rem 0; border-bottom: 1px solid var(--mist);
+    }
+    .peak-item:last-child { border-bottom: none; }
+    .peak-elevation {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.82rem; font-weight: 700;
+      color: var(--sky); min-width: 80px; text-align: right;
+      letter-spacing: 1px; padding-top: 0.3rem;
+    }
+    .peak-name { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--forest); margin-bottom: 0.35rem; }
+    .peak-detail { font-size: 0.87rem; color: var(--stone); font-weight: 300; line-height: 1.7; }
+    .peak-badge {
+      margin-left: auto; align-self: center;
+      padding: 0.3rem 0.9rem; background: var(--mist);
+      border-radius: 100px; font-size: 0.67rem; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--forest); font-weight: 700; white-space: nowrap;
+    }
+
+    /* ===== GALERI ===== */
+    /*
+      == GALERI - Cara menambahkan foto asli ==
+      Ganti background tiap .gallery-item dengan:
+        background: url('nama-foto.jpg') center/cover no-repeat;
+      Dan hapus elemen .gallery-label di dalamnya jika tidak perlu caption
+    */
+    .section-cream { background: var(--fog); padding: 0 4rem 5.5rem; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 220px 220px;
+      gap: 10px;
+    }
+    .gallery-item {
+      border-radius: 6px; overflow: hidden;
+      display: flex; align-items: flex-end;
+      font-family: 'Lato', sans-serif;
+      transition: transform 0.25s, opacity 0.25s;
+      position: relative; cursor: pointer;
+    }
+    .gallery-item:hover { transform: scale(1.02); opacity: 0.9; }
+    .gallery-item:nth-child(1) { grid-row: span 2; background: linear-gradient(170deg, #5a7a4a 0%, #2C4A2E 100%); }
+    .gallery-item:nth-child(2) { background: linear-gradient(135deg, #6B8FA8 0%, #3a5a72 100%); }
+    .gallery-item:nth-child(3) { background: linear-gradient(135deg, #8B7355 0%, #5a4a35 100%); }
+    .gallery-item:nth-child(4) { background: linear-gradient(135deg, #7A9E6F 0%, #4A6741 100%); }
+    .gallery-item:nth-child(5) { background: linear-gradient(135deg, #B8C9A0 0%, #7A9E6F 100%); }
+    .gallery-label {
+      background: linear-gradient(transparent, rgba(0,0,0,0.55));
+      width: 100%; padding: 2rem 1rem 0.8rem;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.82rem; font-weight: 300; letter-spacing: 0.5px;
+    }
+    .gallery-label strong { display: block; font-size: 1rem; font-weight: 700; margin-bottom: 0.15rem; }
+
+    /* ===== KONTAK ===== */
+    /* == KONTAK - Ganti link email, LinkedIn, dan Instagram == */
+    .contact-section { background: var(--bark); }
+    .contact-inner { max-width: 580px; margin: 0 auto; text-align: center; }
+    .contact-section .section-label {
+      justify-content: center; color: var(--mist);
+    }
+    .contact-section .section-label::after { display: none; }
+    .contact-section .section-label::before { content: ''; width: 60px; height: 1px; background: var(--mist); }
+    .contact-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem; font-weight: 700;
+      color: var(--cream); margin-bottom: 1.2rem; line-height: 1.2;
+    }
+    .contact-subtext {
+      color: rgba(245,240,232,0.5); font-size: 0.92rem;
+      line-height: 1.85; font-weight: 300; margin-bottom: 3rem;
+    }
+    .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .contact-link {
+      padding: 0.85rem 2rem;
+      border: 1px solid rgba(245,240,232,0.2); border-radius: 100px;
+      font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--cream); font-weight: 700;
+      text-decoration: none; transition: background 0.2s;
+      display: inline-flex; align-items: center; gap: 0.55rem;
+    }
+    .contact-link:hover { background: rgba(255,255,255,0.1); }
+    .contact-link.primary { background: var(--moss); border-color: var(--moss); }
+    .contact-link.primary:hover { background: var(--forest); border-color: var(--forest); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--bark); text-align: center;
+      padding: 1.8rem 4rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      font-size: 0.75rem; color: rgba(245,240,232,0.28);
+      letter-spacing: 1.5px;
+    }
+
+    /* ===== RESPONSIVE MOBILE ===== */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; flex-direction: column; gap: 1.5rem; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); padding: 2rem 1.5rem; border-bottom: 1px solid var(--mist); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .hero { padding: 7rem 1.5rem 4rem; }
+      section { padding: 4rem 1.5rem; }
+      .section-cream { padding: 0 1.5rem 4rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .portfolio-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 180px); }
+      .gallery-item:nth-child(1) { grid-row: span 1; }
+      .peak-item { flex-direction: column; gap: 0.5rem; }
+      .peak-elevation { text-align: left; }
+      .peak-badge { margin-left: 0; align-self: flex-start; }
+      footer { padding: 1.5rem; }
+    }
+    @media (max-width: 500px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGASI
+       Ubah teks menu sesuai kebutuhan
+  ============================================ -->
+  <nav id="navbar">
+    <div class="nav-logo">HM</div>
+    <div class="nav-links" id="nav-menu">
+      <a href="#tentang">Tentang</a>
+      <a href="#portfolio">HR Portfolio</a>
+      <a href="#pendakian">Pendakian</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#kontak">Kontak</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Buka menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ============================================
+       HERO SECTION
+       Edit: tagline, nama, tags
+  ============================================ -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+
+    <svg class="mountain-svg" viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <polygon points="0,520 120,210 240,350 380,70 500,290 640,130 760,270 900,160 900,520" fill="#2C4A2E"/>
+      <polygon points="380,70 320,190 440,190" fill="#7A9E6F" opacity="0.45"/>
+      <polygon points="640,130 590,230 690,230" fill="#7A9E6F" opacity="0.35"/>
+      <polygon points="120,210 80,290 160,290" fill="#7A9E6F" opacity="0.25"/>
+    </svg>
+
+    <div class="hero-content">
+      <!-- == Ubah teks eyebrow == -->
+      <div class="hero-eyebrow">Portofolio Personal</div>
+
+      <!-- == GANTI NAMA DI SINI == -->
+      <h1 class="hero-name">
+        Haris
+        <em>Mahadawudin</em>
+      </h1>
+
+      <!-- == GANTI TAGLINE DI SINI == -->
+      <p class="hero-tagline">
+        Menavigasi kompleksitas sumber daya manusia di siang hari —
+        menaklukkan puncak-puncak Indonesia di akhir pekan.
+        Dua dunia, satu semangat yang sama.
+      </p>
+
+      <!-- == GANTI TAG / LABEL DI SINI == -->
+      <div class="hero-tags">
+        <span class="tag filled">Compensation &amp; Benefit</span>
+        <span class="tag">HRD Staff</span>
+        <span class="tag">Pendaki Gunung</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-mountain" aria-hidden="true"></div>
+
+  <!-- ============================================
+       TENTANG SAYA
+       Edit: bio paragraf, statistik
+  ============================================ -->
+  <section class="section-stone" id="tentang">
+    <div class="section-label">Tentang Saya</div>
+    <div class="about-grid">
+
+      <!-- Foto profil placeholder — ganti dengan foto asli kamu -->
+      <!-- Cara pakai foto: hapus div.about-photo-placeholder, uncomment tag <img> -->
+      <div class="about-photo-placeholder" aria-hidden="true">
+        <div class="photo-initials">HM</div>
+      </div>
+      <!-- <div class="about-photo">
+        <img src="foto-profil.jpg" alt="Foto Haris Mahadawudin" />
+      </div> -->
+
+      <div class="about-text">
+        <!-- == GANTI JUDUL ABOUT == -->
+        <h2>Antara data gaji dan puncak gunung</h2>
+
+        <!-- == GANTI BIO PARAGRAF-PARAGRAF INI == -->
+        <p>
+          Halo! Saya Haris — seorang profesional HR yang berspesialisasi di bidang
+          Compensation &amp; Benefit. Saya percaya bahwa merancang sistem kompensasi
+          yang adil dan transparan adalah bentuk nyata menghargai kontribusi setiap
+          karyawan.
+        </p>
+        <p>
+          Di luar jam kerja, saya adalah pendaki yang percaya bahwa setiap gunung
+          punya cerita dan pelajaran tersendiri. Summit adalah bonus — proses
+          perjalanannya yang membentuk karakter dan ketahanan diri.
+        </p>
+        <p>
+          Website ini adalah ruang saya untuk mendokumentasikan dua dunia yang
+          saya cintai: dunia profesional HR dan dunia petualangan alam terbuka.
+        </p>
+
+        <!-- == GANTI STATISTIK == -->
+        <div class="stat-row">
+          <div class="stat">
+            <span class="stat-num">C&amp;B</span>
+            <span class="stat-lbl">Spesialisasi</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">HRD</span>
+            <span class="stat-lbl">Bidang</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">∞</span>
+            <span class="stat-lbl">Puncak Impian</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       HR PORTFOLIO
+       Tambah / hapus / edit kartu sesuai keahlian kamu
+       Daftar ikon: https://tabler-icons.io/
+  ============================================ -->
+  <section class="section-dark" id="portfolio">
+    <div class="section-label">HR Portfolio</div>
+    <div class="portfolio-grid">
+
+      <!-- Kartu 1 -->
+      <div class="portfolio-card">
+        <div class="card-icon"><i class="ti ti-cash" aria-hidden="true"></i></div>
+        <!-- == GANTI JUDUL & DESKRIPSI == -->
+        <div class="card-title">Compensation Design</div>
+        <div class="card-desc">
+          Merancang dan mengelola struktur gaji yang kompetitif dan berkeadilan
+          internal. Analisis benchmarking pasar dan salary grading.
+        </div>
+        <span class="card-tag">Core Skill</span>
+      </div>
+
+      <!-- Kartu 2 -->
+      <div class="portfolio-card">
+        <div class="card-icon"><i class="ti ti-gift" aria-hidden="true"></i></div>
+        <div class="card-title">Benefits Management</div>
+        <div class="card-desc">
+          Pengelolaan program tunjangan karyawan — BPJS, asuransi, fasilitas,
+          dan employee wellness yang terintegrasi.
+        </div>
+        <span class="card-tag">Spesialisasi</span>
+      </div>
+
+      <!-- Kartu 3 -->
+      <div class="portfolio-card">
+        <div class="card-icon"><i class="ti ti-chart-bar" aria-hidden="true"></i></div>
+        <div class="card-title">HR Analytics</div>
+        <div class="card-desc">
+          Pengolahan data kompensasi untuk insight strategis. Reporting
+          penggajian dan analisis cost-to-company yang akurat.
+        </div>
+        <span class="card-tag">Data-Driven</span>
+      </div>
+
+      <!-- Kartu 4 -->
+      <div class="portfolio-card">
+        <div class="card-icon"><i class="ti ti-file-text" aria-hidden="true"></i></div>
+        <div class="card-title">Payroll Process</div>
+        <div class="card-desc">
+          Administrasi penggajian yang tepat waktu dan akurat. Kepatuhan
+          terhadap regulasi ketenagakerjaan dan perpajakan.
+        </div>
+        <span class="card-tag">Operations</span>
+      </div>
+
+      <!-- Kartu 5 -->
+      <div class="portfolio-card">
+        <div class="card-icon"><i class="ti ti-users" aria-hidden="true"></i></div>
+        <div class="card-title">Employee Relations</div>
+        <div class="card-desc">
+          Membangun hubungan kerja yang sehat antara karyawan dan perusahaan
+          melalui kebijakan yang transparan.
+        </div>
+        <span class="card-tag">Soft Skill</span>
+      </div>
+
+      <!-- Kartu 6 -->
+      <div class="portfolio-card">
+        <div class="card-icon"><i class="ti ti-scale" aria-hidden="true"></i></div>
+        <div class="card-title">Job Evaluation</div>
+        <div class="card-desc">
+          Evaluasi jabatan dan penyusunan job grade menggunakan metodologi
+          yang terstruktur dan objektif.
+        </div>
+        <span class="card-tag">Strategic</span>
+      </div>
+
+      <!-- Untuk TAMBAH kartu baru, copy paste blok di atas dan ubah isinya -->
+
+    </div>
+  </section>
+
+  <!-- ============================================
+       CATATAN PENDAKIAN
+       Tambah / hapus gunung sesuai perjalananmu
+  ============================================ -->
+  <section class="section-stone" id="pendakian">
+    <div class="section-label">Catatan Pendakian</div>
+    <ul class="peaks-list">
+
+      <!-- == GUNUNG 1 — Ubah nama, elevasi, lokasi, cerita, dan badge == -->
+      <li class="peak-item">
+        <div class="peak-elevation">3.676 m</div>
+        <div>
+          <div class="peak-name">Gunung Rinjani</div>
+          <div class="peak-detail">
+            Lombok, Nusa Tenggara Barat &middot;
+            Danau Segara Anak yang biru memantulkan langit — pemandangan
+            yang tak pernah habis memukau. Destinasi impian yang menunggu waktunya.
+          </div>
+        </div>
+        <span class="peak-badge">Impian</span>
+      </li>
+
+      <!-- Gunung 2 -->
+      <li class="peak-item">
+        <div class="peak-elevation">3.428 m</div>
+        <div>
+          <div class="peak-name">Gunung Semeru</div>
+          <div class="peak-detail">
+            Jawa Timur &middot;
+            Mahameru, atap Pulau Jawa. Setiap langkah di lautan pasir
+            adalah meditasi berjalan yang mengajarkan kesabaran.
+          </div>
+        </div>
+        <span class="peak-badge">Wishlist</span>
+      </li>
+
+      <!-- Gunung 3 -->
+      <li class="peak-item">
+        <div class="peak-elevation">2.958 m</div>
+        <div>
+          <div class="peak-name">Gunung Prau</div>
+          <div class="peak-detail">
+            Wonosobo, Jawa Tengah &middot;
+            Padang bunga dan golden sunrise yang membuat semua rasa lelah
+            perjalanan terlupakan seketika.
+          </div>
+        </div>
+        <span class="peak-badge">Kenangan</span>
+      </li>
+
+      <!-- Gunung 4 -->
+      <li class="peak-item">
+        <div class="peak-elevation">2.565 m</div>
+        <div>
+          <div class="peak-name">Gunung Gede</div>
+          <div class="peak-detail">
+            Jawa Barat &middot;
+            Tempat pertama berkenalan dengan kehidupan di atas awan
+            dan bintang yang terasa lebih dekat dari biasanya.
+          </div>
+        </div>
+        <span class="peak-badge">Favorit</span>
+      </li>
+
+      <!-- Untuk TAMBAH gunung baru, copy paste salah satu <li> di atas -->
+
+    </ul>
+  </section>
+
+  <!-- ============================================
+       GALERI
+       Cara pakai foto asli:
+       Ganti "background: linear-gradient(...)" dengan:
+       "background: url('nama-foto.jpg') center/cover no-repeat;"
+       pada tiap .gallery-item di CSS atau pakai style inline di sini
+  ============================================ -->
+  <div class="section-cream" id="galeri">
+    <div class="section-label" style="padding-top: 5.5rem;">Galeri Momen</div>
+    <div class="gallery-grid">
+
+      <!-- Foto 1 (besar, kiri) — ganti background dengan foto asli -->
+      <div class="gallery-item" style="/* background: url('foto1.jpg') center/cover no-repeat; */">
+        <div class="gallery-label">
+          <strong>Di atas awan</strong>
+          Momen terbaik di ketinggian
+        </div>
+      </div>
+
+      <!-- Foto 2 -->
+      <div class="gallery-item" style="/* background: url('foto2.jpg') center/cover no-repeat; */">
+        <div class="gallery-label"><strong>Sunrise summit</strong></div>
+      </div>
+
+      <!-- Foto 3 -->
+      <div class="gallery-item" style="/* background: url('foto3.jpg') center/cover no-repeat; */">
+        <div class="gallery-label"><strong>Tenda & bintang</strong></div>
+      </div>
+
+      <!-- Foto 4 -->
+      <div class="gallery-item" style="/* background: url('foto4.jpg') center/cover no-repeat; */">
+        <div class="gallery-label"><strong>Jalur hutan</strong></div>
+      </div>
+
+      <!-- Foto 5 -->
+      <div class="gallery-item" style="/* background: url('foto5.jpg') center/cover no-repeat; */">
+        <div class="gallery-label"><strong>Kawah & danau</strong></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================
+       KONTAK
+       Ganti href dengan link asli kamu
+  ============================================ -->
+  <section class="contact-section" id="kontak">
+    <div class="contact-inner">
+      <div class="section-label">Kontak</div>
+
+      <!-- == GANTI JUDUL KONTAK == -->
+      <h2 class="contact-heading">Mari Terhubung</h2>
+
+      <!-- == GANTI TEKS KONTAK == -->
+      <p class="contact-subtext">
+        Tertarik berdiskusi soal HR, kompensasi, atau sekadar berbagi
+        cerita pendakian? Saya selalu terbuka untuk ngobrol dan berkolaborasi.
+      </p>
+
+      <div class="contact-links">
+        <!-- == GANTI EMAIL == -->
+        <a class="contact-link primary" href="mailto:email@kamu.com">
+          <i class="ti ti-mail" aria-hidden="true"></i> Email Saya
+        </a>
+
+        <!-- == GANTI URL LINKEDIN == -->
+        <a class="contact-link" href="https://linkedin.com/in/username-kamu" target="_blank" rel="noopener">
+          <i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn
+        </a>
+
+        <!-- == GANTI URL INSTAGRAM == -->
+        <a class="contact-link" href="https://instagram.com/username-kamu" target="_blank" rel="noopener">
+          <i class="ti ti-brand-instagram" aria-hidden="true"></i> Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       Ubah tahun dan tagline jika perlu
+  ============================================ -->
+  <footer>
+    &copy; 2026 Haris Mahadawudin &nbsp;&middot;&nbsp; From office to summit, always climbing.
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // Hamburger menu mobile
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => menu.classList.toggle('open'));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+    // Highlight nav link aktif saat scroll
+    const sections = document.querySelectorAll('section[id], div[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--forest)' : '';
+      });
+    });
+  </script>
+
+</body>
+</html>
