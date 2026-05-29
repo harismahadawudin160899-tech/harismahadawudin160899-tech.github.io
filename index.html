@@ -174,12 +174,10 @@
       color: rgba(255,255,255,0.2); letter-spacing: -4px;
       position: relative; z-index: 1;
     }
-    /* Uncomment ini untuk pakai foto asli:
     .about-photo img {
       width: 100%; aspect-ratio: 3/4; object-fit: cover;
       border-radius: 4px 48px 4px 48px;
     }
-    */
 
     .about-text h2 {
       font-family: 'Playfair Display', serif;
@@ -361,7 +359,7 @@
        Ubah teks menu sesuai kebutuhan
   ============================================ -->
   <nav id="navbar">
-    <div class="nav-logo">HM</div>
+    <div class="nav-logo"><img src="logowebsiteharis.png" alt="Logo Haris Mahadawudin" style="height: 116px; width: auto;" /></div>
     <div class="nav-links" id="nav-menu">
       <a href="#tentang">Tentang</a>
       <a href="#portfolio">HR Portfolio</a>
@@ -424,14 +422,10 @@
     <div class="section-label">Tentang Saya</div>
     <div class="about-grid">
 
-      <!-- Foto profil placeholder — ganti dengan foto asli kamu -->
-      <!-- Cara pakai foto: hapus div.about-photo-placeholder, uncomment tag <img> -->
-      <div class="about-photo">
-  <img src="logowebsiteharis.png" alt="Foto Haris Mahadawudin" />
-</div>
-      <!-- <div class="about-photo">
-        <img src="foto-profil.jpg" alt="Foto Haris Mahadawudin" />
-      </div> -->
+      <!-- Foto profil akan ditambahkan nanti -->
+      <div class="about-photo-placeholder" aria-hidden="true">
+        <div class="photo-initials">HM</div>
+      </div>
 
       <div class="about-text">
         <!-- == GANTI JUDUL ABOUT == -->
@@ -689,7 +683,7 @@
         </a>
 
         <!-- == GANTI URL LINKEDIN == -->
-        <a class="contact-link" href="www.linkedin.com/in/harismahadawudin" target="_blank" rel="noopener">
+        <a class="contact-link" href="https://www.linkedin.com/in/harismahadawudin" target="_blank" rel="noopener">
           <i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn
         </a>
 
