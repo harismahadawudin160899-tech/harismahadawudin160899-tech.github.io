@@ -23,7 +23,7 @@
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Lato', sans-serif; background: var(--offwhite); color: var(--black); overflow-x: hidden; }
-
+ 
     /* NAV */
     nav { position: fixed; top: 0; width: 100%; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 4rem; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); border-bottom: 2px solid var(--yellow); }
     .nav-logo img { height: 110px; width: auto; display: block; }
@@ -32,7 +32,7 @@
     .nav-links a:hover { color: var(--yellow); }
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
     .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--black); margin: 5px 0; }
-
+ 
     /* HERO */
     .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 10rem 4rem 5rem; position: relative; overflow: hidden; background: var(--hero-bg); }
     .hero-deco { position: absolute; top: 0; right: 0; width: 45%; height: 100%; background: linear-gradient(135deg, #292929 0%, #333333 100%); clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%); z-index: 0; }
@@ -45,72 +45,73 @@
     .hero-tags { display: flex; gap: 0.75rem; flex-wrap: wrap; }
     .tag { padding: 0.4rem 1.2rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.7); font-weight: 700; }
     .tag.filled { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
-
+ 
     /* DIVIDER */
     .divider { width: 100%; height: 5px; background: linear-gradient(90deg, var(--yellow), var(--yellow2), var(--yellow)); }
-
+ 
     /* SECTIONS */
     section { padding: 5.5rem 4rem; }
     .section-dark { background: var(--black); color: var(--white); }
     .section-light { background: var(--white); }
     .section-gray { background: var(--offwhite); }
     .section-yellow { background: var(--yellow); }
-
+ 
     .section-label { font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 700; margin-bottom: 3rem; display: flex; align-items: center; gap: 1rem; }
     .section-dark .section-label { color: var(--yellow); }
     .section-light .section-label, .section-gray .section-label { color: var(--yellow); }
     .section-yellow .section-label { color: var(--black); }
     .section-label::after { content: ''; flex: 1; max-width: 60px; height: 2px; background: currentColor; }
-
+ 
     /* ABOUT */
     .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center; }
     .about-photo { position: relative; }
     .about-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 4px; display: block; }
     .about-photo::after { content: ''; position: absolute; bottom: -12px; right: -12px; width: 100%; height: 100%; border: 3px solid var(--yellow); border-radius: 4px; z-index: -1; }
     .about-text h2 { font-family: 'Playfair Display', serif; font-size: 2.3rem; font-weight: 700; color: var(--black); margin-bottom: 1.5rem; line-height: 1.2; }
-    .about-text p { color: var(--gray); line-height: 1.9; font-size: 0.95rem; margin-bottom: 1rem; font-weight: 300; }
+    .about-text p { color: var(--charcoal); line-height: 1.9; font-size: 0.95rem; margin-bottom: 1rem; font-weight: 400; }
     .stat-row { display: flex; gap: 2rem; margin-top: 2rem; padding-top: 2rem; border-top: 2px solid var(--lightgray); }
     .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--black); display: block; }
-    .stat-lbl { font-size: 0.67rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); font-weight: 700; }
-
+    .stat-lbl { font-size: 0.67rem; letter-spacing: 2px; text-transform: uppercase; color: var(--charcoal); font-weight: 700; }
+ 
     /* LOGO STRIP */
     .logo-strip { margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid var(--lightgray); }
-    .logo-strip-label { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); font-weight: 700; margin-bottom: 1rem; }
+    .logo-strip-label { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--charcoal); font-weight: 700; margin-bottom: 1rem; }
     .logo-strip-items { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
     .logo-strip-item { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
     .logo-strip-item img { height: 38px; width: auto; object-fit: contain; transition: transform 0.2s; }
     .logo-strip-item img:hover { transform: scale(1.1); }
-    .logo-strip-item span { font-size: 0.62rem; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); font-weight: 700; }
-
+    .logo-strip-item span { font-size: 0.62rem; letter-spacing: 1px; text-transform: uppercase; color: var(--charcoal); font-weight: 700; }
+ 
     /* PORTFOLIO */
     .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .portfolio-card { background: var(--dark); border: 1px solid var(--charcoal); border-radius: 8px; padding: 2rem; transition: transform 0.25s, border-color 0.25s; }
     .portfolio-card:hover { transform: translateY(-5px); border-color: var(--yellow); }
     .card-icon { font-size: 1.6rem; margin-bottom: 1.2rem; color: var(--yellow); }
     .card-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--white); margin-bottom: 0.7rem; }
-    .card-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.75; font-weight: 300; }
+    .card-desc { font-size: 0.85rem; color: rgba(255,255,255,0.85); line-height: 1.75; font-weight: 400; }
     .card-tag { display: inline-block; margin-top: 1.2rem; padding: 0.25rem 0.8rem; border: 1px solid var(--yellow); border-radius: 100px; font-size: 0.67rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--yellow); font-weight: 700; }
-
+ 
     /* PENGALAMAN */
-    .exp-list { list-style: none; max-width: 900px; }
+    .exp-list { list-style: none; max-width: 100%; }
     .exp-item { padding: 2.2rem 0; border-bottom: 1px solid var(--lightgray); }
     .exp-item:last-child { border-bottom: none; }
     .exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem; flex-wrap: wrap; }
-    .exp-company { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--black); }
+    .exp-company { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--black); font-weight: 700; }
     .exp-period { font-size: 0.72rem; letter-spacing: 1.5px; color: var(--black); font-weight: 700; background: var(--yellow); padding: 0.25rem 0.85rem; border-radius: 100px; white-space: nowrap; }
-    .exp-role { font-size: 0.78rem; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); font-weight: 700; margin-bottom: 1rem; margin-top: 0.3rem; }
+    .exp-role { font-size: 0.78rem; letter-spacing: 1px; text-transform: uppercase; color: var(--charcoal); font-weight: 700; margin-bottom: 1rem; margin-top: 0.3rem; }
     .exp-bullets { list-style: none; }
-    .exp-bullets li { font-size: 0.87rem; color: var(--gray); line-height: 1.8; font-weight: 300; padding: 0.2rem 0 0.2rem 1.2rem; position: relative; }
+    .exp-bullets li { font-size: 0.9rem; color: var(--black); line-height: 1.8; font-weight: 400; padding: 0.2rem 0 0.2rem 1.4rem; position: relative; }
     .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--yellow); font-weight: 700; }
-
+ 
     /* KEAHLIAN */
     .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .skill-group {
-      background: var(--white);
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(8px);
       border-radius: 12px;
       padding: 1.75rem;
-      border: 1px solid var(--lightgray);
-      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      border: 1px solid rgba(201,168,76,0.25);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
       transition: transform 0.25s, box-shadow 0.25s;
       position: relative;
       overflow: hidden;
@@ -124,7 +125,8 @@
     }
     .skill-group:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.13);
+      background: rgba(255,255,255,0.92);
     }
     .skill-group-title {
       font-family: 'Playfair Display', serif;
@@ -142,7 +144,7 @@
       border: 1px solid var(--lightgray);
       border-radius: 100px;
       font-size: 0.75rem;
-      color: var(--charcoal);
+      color: var(--black);
       font-weight: 700;
       transition: background 0.2s, border-color 0.2s;
     }
@@ -151,7 +153,7 @@
       border-color: var(--yellow);
       color: var(--black);
     }
-
+ 
     /* PENDIDIKAN */
     .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .edu-card { border-radius: 8px; padding: 2rem; position: relative; overflow: hidden; }
@@ -160,8 +162,8 @@
     .edu-card-2 { background: var(--charcoal); }
     .edu-year { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--yellow); font-weight: 700; margin-bottom: 0.5rem; }
     .edu-school { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--white); margin-bottom: 0.4rem; }
-    .edu-major { font-size: 0.85rem; color: rgba(255,255,255,0.55); font-weight: 300; line-height: 1.6; }
-
+    .edu-major { font-size: 0.85rem; color: rgba(255,255,255,0.85); font-weight: 400; line-height: 1.6; }
+ 
     /* GALERI */
     .section-galeri { background: var(--offwhite); padding: 5.5rem 4rem; }
     .gallery-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 220px 220px; gap: 10px; }
@@ -176,7 +178,7 @@
     .gallery-label strong { display: block; font-size: 1rem; font-weight: 700; margin-bottom: 0.1rem; }
     .gallery-item:nth-child(2) .gallery-label,
     .gallery-item:nth-child(5) .gallery-label { color: var(--black); background: linear-gradient(transparent, rgba(0,0,0,0.25)); }
-
+ 
     /* KONTAK */
     .contact-section { background: var(--black); }
     .contact-inner { max-width: 580px; margin: 0 auto; text-align: center; }
@@ -184,7 +186,7 @@
     .contact-section .section-label::after { display: none; }
     .contact-section .section-label::before { content: ''; width: 60px; height: 2px; background: var(--yellow); }
     .contact-heading { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 700; color: var(--white); margin-bottom: 1.2rem; line-height: 1.2; }
-    .contact-subtext { color: rgba(255,255,255,0.45); font-size: 0.92rem; line-height: 1.85; font-weight: 300; margin-bottom: 3rem; }
+    .contact-subtext { color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.85; font-weight: 400; margin-bottom: 3rem; }
     .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .contact-link { padding: 0.85rem 2rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--white); font-weight: 700; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.55rem; }
     .contact-link:hover { border-color: var(--yellow); color: var(--yellow); }
@@ -192,10 +194,10 @@
     .contact-link.primary:hover { background: var(--yellow2); }
     .contact-link.whatsapp { background: #25D366; color: var(--white); border-color: #25D366; }
     .contact-link.whatsapp:hover { background: #1ebe5d; border-color: #1ebe5d; color: var(--white); }
-
+ 
     /* FOOTER */
     footer { background: var(--dark); text-align: center; padding: 1.8rem 4rem; border-top: 2px solid var(--yellow); font-size: 0.75rem; color: rgba(255,255,255,0.3); letter-spacing: 1.5px; }
-
+ 
     /* RESPONSIVE */
     @media (max-width: 768px) {
       nav { padding: 0.4rem 1.5rem; }
@@ -219,7 +221,7 @@
   </style>
 </head>
 <body>
-
+ 
   <!-- NAV -->
   <nav id="navbar">
     <div class="nav-logo"><img src="logowebsiteharis.png" alt="Logo Haris Mahadawudin" /></div>
@@ -235,7 +237,7 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
-
+ 
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-deco"></div>
@@ -249,14 +251,12 @@
       <div class="hero-tags">
         <span class="tag filled">Compensation &amp; Benefit</span>
         <span class="tag">HRD Staff</span>
-        <span class="tag">Payroll Specialist</span>
-        <span class="tag">BNSP Certified</span>
       </div>
     </div>
   </section>
-
+ 
   <div class="divider"></div>
-
+ 
   <!-- TENTANG -->
   <section class="section-light" id="tentang">
     <div class="section-label">Tentang Saya</div>
@@ -288,7 +288,7 @@
           <div class="stat"><span class="stat-num">2 Thn</span><span class="stat-lbl">Pengalaman HR</span></div>
           <div class="stat"><span class="stat-num">BNSP</span><span class="stat-lbl">Bersertifikat</span></div>
         </div>
-
+ 
         <div class="logo-strip">
           <div class="logo-strip-label">Bersertifikat &amp; Familiar dengan</div>
           <div class="logo-strip-items">
@@ -317,7 +317,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- HR PORTFOLIO -->
   <section class="section-dark" id="portfolio">
     <div class="section-label">HR Portfolio</div>
@@ -360,7 +360,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- PENGALAMAN KERJA -->
   <section class="section-light" id="pengalaman">
     <div class="section-label">Pengalaman Kerja</div>
@@ -410,7 +410,7 @@
       </li>
     </ul>
   </section>
-
+ 
   <!-- KEAHLIAN -->
   <section class="section-gray" id="keahlian">
     <div class="section-label">Keahlian</div>
@@ -466,7 +466,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- PENDIDIKAN -->
   <section class="section-dark" id="pendidikan">
     <div class="section-label">Pendidikan</div>
@@ -483,7 +483,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- GALERI PEKERJAAN -->
   <div class="section-galeri" id="galeri">
     <div class="section-label" style="color:var(--yellow);">Galeri Pekerjaan</div>
@@ -505,7 +505,7 @@
       </div>
     </div>
   </div>
-
+ 
   <!-- KONTAK -->
   <section class="contact-section" id="kontak">
     <div class="contact-inner">
@@ -531,11 +531,11 @@
       </div>
     </div>
   </section>
-
+ 
   <footer>
     &copy; 2026 Haris Mahadawudin &nbsp;·&nbsp; HR Professional · Kota Tangerang
   </footer>
-
+ 
   <script>
     const toggle = document.getElementById('nav-toggle');
     const menu = document.getElementById('nav-menu');
@@ -549,6 +549,6 @@
       navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--yellow)' : ''; });
     });
   </script>
-
+ 
 </body>
 </html>
